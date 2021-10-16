@@ -1,1 +1,1 @@
-export * as Client from './liveCoinWatch';
+export * from './liveCoinWatch';

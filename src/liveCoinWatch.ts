@@ -4,7 +4,7 @@ import axios from 'axios';
 
 const API_URL = 'https://api.livecoinwatch.com/';
 
-export default class LiveCoinWatch {
+export class LiveCoinWatch {
     constructor(apiKey: string) {
         axios.defaults.headers.post['x-api-key'] = apiKey;
     }
