@@ -4,11 +4,17 @@
   "description": "Unofficial livecoinwatch.com API Wrapper",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn ./src/liveCoinWatch.ts"
+    "dev": "ts-node-dev --respawn ./src/liveCoinWatch.ts",
+    "build": "tsc",
+    "prepare": "npm run build"
   },
   "keywords": [
     "livecoinwatch"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fajryhamzah/livecoinwatch-api-wrapper.git"
+  },
   "author": "fhaji",
   "license": "ISC",
   "dependencies": {
