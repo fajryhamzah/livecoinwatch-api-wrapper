@@ -2,7 +2,7 @@
   "name": "livecoinwatch-api-wrapper",
   "version": "0.1.0",
   "description": "Unofficial livecoinwatch.com API Wrapper",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "ts-node-dev --respawn ./src/liveCoinWatch.ts",
     "build": "tsc",
