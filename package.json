@@ -1,6 +1,6 @@
 {
   "name": "livecoinwatch-wrapper-api",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Unofficial livecoinwatch.com API Wrapper",
   "main": "dist/index.js",
   "scripts": {

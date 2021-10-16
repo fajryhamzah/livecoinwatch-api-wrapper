@@ -13,7 +13,7 @@ export class LiveCoinWatch {
      * Wrapper for endpoint https://livecoinwatch.github.io/lcw-api-docs/#credits
      * @returns {Promise}
      */
-    public getCredits() {
+    public getCredits(): Promise<any> {
         return this.getResponse('credits')
     }
 
@@ -21,7 +21,7 @@ export class LiveCoinWatch {
      * Wrapper for endpoint https://livecoinwatch.github.io/lcw-api-docs/#fiatsall
      * @returns {Promise}
      */
-    public getAllFiats() {
+    public getAllFiats(): Promise<any> {
         return this.getResponse('fiats/all');
     }
 
@@ -30,7 +30,7 @@ export class LiveCoinWatch {
      * @param {string} fiat 
      * @returns {Promise}
      */
-    public getOverview(fiat: string) {
+    public getOverview(fiat: string): Promise<any> {
         return this.getResponse('overview', {
             currency: fiat
         });
@@ -43,7 +43,7 @@ export class LiveCoinWatch {
      * @param {number} endTimestamp 
      * @returns {Promise}
      */
-    public getOverviewHistory(fiat: string, startTimestamp: number, endTimestamp: number) {
+    public getOverviewHistory(fiat: string, startTimestamp: number, endTimestamp: number): Promise<any> {
         return this.getResponse('overview/history', {
             currency: fiat,
             end: endTimestamp,
@@ -58,7 +58,7 @@ export class LiveCoinWatch {
      * @param {boolean} withMetadata 
      * @returns {Promise}
      */
-    public getCoin(fiat: string, coinCode: string, withMetadata: boolean = false) {
+    public getCoin(fiat: string, coinCode: string, withMetadata: boolean = false): Promise<any> {
         return this.getResponse('coins/single', {
             currency: fiat,
             code: coinCode.toUpperCase(),
@@ -74,7 +74,7 @@ export class LiveCoinWatch {
      * @param {number} endTimestamp 
      * @returns {Promise}
      */
-    public getCoinHistory(fiat: string, coinCode: string, startTimestamp: number, endTimestamp: number) {
+    public getCoinHistory(fiat: string, coinCode: string, startTimestamp: number, endTimestamp: number): Promise<any> {
         return this.getResponse('coins/single/history', {
             currency: fiat,
             code: coinCode.toUpperCase(),
@@ -98,7 +98,7 @@ export class LiveCoinWatch {
             limit?: number;
             meta?: boolean;
         } | null = null
-    ) {
+    ): Promise<any> {
         let defaultConfig = {
             sort: 'rank',
             order: 'ascending',
@@ -119,7 +119,7 @@ export class LiveCoinWatch {
      * @param {boolean} withMeta 
      * @returns {Promise} 
      */
-    public getExchange(fiat: string, exchangeCode = 'binance', withMeta: boolean = true) {
+    public getExchange(fiat: string, exchangeCode = 'binance', withMeta: boolean = true): Promise<any> {
         return this.getResponse('exchanges/single', {
             currency: fiat,
             code: exchangeCode,
@@ -142,7 +142,7 @@ export class LiveCoinWatch {
             limit?: number;
             meta?: boolean;
         } | null = null
-    ) {
+    ): Promise<any> {
         let defaultConfig = {
             sort: 'volume',
             order: 'descending',
@@ -163,7 +163,7 @@ export class LiveCoinWatch {
      * @param {any} data 
      * @returns {Promise}
      */
-    private getResponse(endpoint: string, data: any = {}) {
+    private getResponse(endpoint: string, data: any = {}): Promise<any> {
         return axios.post(API_URL + endpoint, data).then(response => {
             return response.data;
         });
